@@ -1,0 +1,22 @@
+#!/sbin/openrc-run
+
+description="Start RetroArch"
+
+depend()
+{
+    after coreui
+    need localmount
+    keyword -retroarch -libretro
+    provide retroarch
+}
+
+start_pre()
+{
+        [ -f "/etc/profile.d/sysenv.sh" ] && source /etc/profile.d/sysenv.sh
+}
+
+command="retroarch"
+command_args="-v -c /etc/retroarch.cfg --fullscreen --log-file=/var/log/retroarch.log"
+command_background=true
+pidfile="/run/retroarch.pid"
+supervisor=supervise-daemon

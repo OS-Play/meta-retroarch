@@ -1,0 +1,9 @@
+This README file contains information on the contents of the meta-retroarch layer.
+
+Please see the corresponding sections below for details.
+
+Dependencies
+============
+
+  URI: https://github.com/dev-0x7C6/meta-retro
+  branch: kirkstone
