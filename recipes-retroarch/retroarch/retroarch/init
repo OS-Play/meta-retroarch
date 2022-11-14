@@ -4,15 +4,15 @@ description="Start RetroArch"
 
 depend()
 {
-    after coreui
+    after coreui pulseaudio
     need localmount
     keyword -retroarch -libretro
-    provide retroarch
 }
 
 start_pre()
 {
-        [ -f "/etc/profile.d/sysenv.sh" ] && source /etc/profile.d/sysenv.sh
+    [ -f "/etc/profile.d/sysenv.sh" ] && source /etc/profile.d/sysenv.sh
+    [ -f "/etc/profile.d/pulse.sh" ] && source /etc/profile.d/pulse.sh
 }
 
 command="retroarch"
